@@ -21,6 +21,10 @@ body {
   background: linear-gradient(to top left, #28b487, #7dd56f);
 }
 
+button {
+  outline: none;
+}
+
 .show-modal {
   font-size: 2rem;
   font-weight: 600;
@@ -31,6 +35,12 @@ body {
   color: #444;
   border-radius: 10rem;
   cursor: pointer;
+  transition: all .3s ease-in;
+}
+
+.show-modal:hover {
+  background-color: #444;
+  color: #fff;
 }
 
 .close-modal {
@@ -56,7 +66,8 @@ p {
 /* -------------------------- */
 /* CLASSES TO MAKE MODAL WORK */
 .hidden {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .modal {
@@ -65,12 +76,12 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
-
   background-color: white;
   padding: 6rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
+  transition: all .3s ease-in;
 }
 
 .overlay {
@@ -82,4 +93,18 @@ p {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5;
+  transition: all .3s ease-in;
+}
+
+/* Media queries */
+@media only screen and (max-width: 990px) {
+  html {
+    font-size: 42.5%;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  html {
+    font-size: 30.5%;
+  }
 }
